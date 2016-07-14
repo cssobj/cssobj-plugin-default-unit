@@ -1,0 +1,20 @@
+{
+  "name": "cssobj-plugin-value-default-unit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cjs/cssobj-plugin-value-default-unit.js",
+  "scripts": {
+    "iife": "mkdir -p iife && rollup -f iife -n cssobj_plugin_value_default_unit src/cssobj-plugin-value-default-unit.js -o iife/cssobj-plugin-value-default-unit.js && uglifyjs iife/cssobj-plugin-value-default-unit.js -cm -o iife/cssobj-plugin-value-default-unit.min.js",
+    "amd": "mkdir -p amd && rollup -f amd -u cssobj_plugin_value_default_unit src/cssobj-plugin-value-default-unit.js -o amd/cssobj-plugin-value-default-unit.js",
+    "cjs": "mkdir -p cjs && rollup -f cjs src/cssobj-plugin-value-default-unit.js -o cjs/cssobj-plugin-value-default-unit.js",
+    "es": "mkdir -p es && rollup -f es src/cssobj-plugin-value-default-unit.js -o es/cssobj-plugin-value-default-unit.js",
+    "make": "npm run iife && npm run cjs && npm run amd && npm run es",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
