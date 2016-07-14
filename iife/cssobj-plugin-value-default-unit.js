@@ -37,7 +37,7 @@ var cssobj_plugin_value_default_unit = (function () {
 
     unit = unit || 'px'
 
-    return function(key, value) {
+    return function(value, key, node, result) {
 
       var base = key
         .replace(/^[^a-zA-Z]*(?:Ms|O|Webkit|Moz|Khtml)?/, '')

@@ -5,10 +5,10 @@ describe('default value test', function() {
 
   it('should add default unit for width', function() {
 
-    var ret = addUnit()('width', 23)
+    var ret = addUnit()(23, 'width')
     expect(ret).equal('23px')
 
-    var ret = addUnit()('marginBottom', 23)
+    var ret = addUnit()(23, 'marginBottom')
     expect(ret).equal('23px')
 
   })
@@ -17,7 +17,7 @@ describe('default value test', function() {
 
   it('should add custom unit for width', function() {
 
-    var ret = addUnit('em')('width', 23)
+    var ret = addUnit('em')(23, 'width')
     expect(ret).equal('23em')
 
   })
@@ -25,48 +25,48 @@ describe('default value test', function() {
 
   it('should ignore for opacity, zIndex', function() {
 
-    var ret = addUnit()('opacity', .5)
+    var ret = addUnit()(.5, 'opacity')
     expect(ret).equal(.5)
 
-    var ret = addUnit()('zIndex', 999)
+    var ret = addUnit()(999, 'zIndex')
     expect(ret).equal(999)
 
   })
 
   it('should allow vendor prefix like -ms-,-o-', function() {
 
-    var ret = addUnit()('Oopacity', .5)
+    var ret = addUnit()(.5, 'Oopacity')
     expect(ret).equal(.5)
 
-    var ret = addUnit()('OOpacity', .5)
+    var ret = addUnit()(.5, 'OOpacity')
     expect(ret).equal(.5)
 
-    var ret = addUnit()('MsOpacity', .5)
+    var ret = addUnit()(.5, 'MsOpacity')
     expect(ret).equal(.5)
 
-    var ret = addUnit()('Msopacity', .5)
+    var ret = addUnit()(.5, 'Msopacity')
     expect(ret).equal(.5)
 
-    var ret = addUnit()('MsZIndex', 999)
+    var ret = addUnit()(999, 'MsZIndex')
     expect(ret).equal(999)
 
   })
 
   it('should allow css hacks',function() {
 
-    var ret = addUnit()('_opacity', .5)
+    var ret = addUnit()(.5, '_opacity')
     expect(ret).equal(.5)
 
-    var ret = addUnit()('*opacity', .5)
+    var ret = addUnit()(.5, '*opacity')
     expect(ret).equal(.5)
 
-    var ret = addUnit()('__opacity', .5)
+    var ret = addUnit()(.5, '__opacity')
     expect(ret).equal(.5)
 
-    var ret = addUnit()('__opacity\\0/', .5)
+    var ret = addUnit()(.5, '__opacity\\0/')
     expect(ret).equal(.5)
 
-    var ret = addUnit()('__zIndex\\0/', 999)
+    var ret = addUnit()(999, '__zIndex\\0/')
     expect(ret).equal(999)
 
   })
