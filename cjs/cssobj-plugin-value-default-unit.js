@@ -43,9 +43,7 @@ function cssobj_plugin_value_default_unit (unit) {
       .replace(/[^a-zA-Z]+$/,'')
       .toLowerCase()
 
-    if (unitless.indexOf(base)>-1) return value
-
-    if (isNaN(value)) return value
+    if (unitless.indexOf(base)>-1 || isNaN(value)) return value
 
     return value + unit
 

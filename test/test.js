@@ -8,6 +8,9 @@ describe('default value test', function() {
     var ret = addUnit()(23, 'width')
     expect(ret).equal('23px')
 
+    var ret = addUnit()(23, 'height')
+    expect(ret).equal('23px')
+
     var ret = addUnit()(23, 'marginBottom')
     expect(ret).equal('23px')
 
@@ -18,6 +21,9 @@ describe('default value test', function() {
   it('should add custom unit for width', function() {
 
     var ret = addUnit('em')(23, 'width')
+    expect(ret).equal('23em')
+
+    var ret = addUnit('em')(23, 'height')
     expect(ret).equal('23em')
 
   })
