@@ -1,40 +1,40 @@
 // cssobj value plugin
 
 var unitless = [
-  'animationIterationCount',
-  'boxFlex',
-  'boxFlexGroup',
-  'boxOrdinalGroup',
-  'columns',
-  'columnCount',
-  'fillOpacity',
-  'flex',
-  'flexGrow',
-  'flexPositive',
-  'flexNegative',
-  'flexOrder',
-  'flexShrink',
-  'fontWeight',
-  'lineHeight',
-  'lineClamp',
-  'opacity',
-  'order',
-  'orphans',
-  'stopOpacity',
-  'strokeDashOffset',
-  'strokeOpacity',
-  'strokeWidth',
-  'tabSize',
-  'widows',
-  'zIndex',
-  'zoom'
+  "animation-iteration-count",
+  "box-flex",
+  "box-flex-group",
+  "box-ordinal-group",
+  "columns",
+  "column-count",
+  "fill-opacity",
+  "flex",
+  "flex-grow",
+  "flex-positive",
+  "flex-negative",
+  "flex-order",
+  "flex-shrink",
+  "font-weight",
+  "line-height",
+  "line-clamp",
+  "opacity",
+  "order",
+  "orphans",
+  "stop-opacity",
+  "stroke-dash-offset",
+  "stroke-opacity",
+  "stroke-width",
+  "tab-size",
+  "widows",
+  "z-index",
+  "zoom"
 ]
 
-var unitlessDash = unitless.map(function(v) {
-  return v.replace(/[A-Z]/g, function(m) {
+function dashify(str) {
+  return str.replace(/[A-Z]/g, function(m) {
     return '-' + m.toLowerCase()
   })
-})
+}
 
 function cssobj_plugin_value_default_unit (unit) {
 
@@ -42,18 +42,15 @@ function cssobj_plugin_value_default_unit (unit) {
 
   return function(value, key, node, result) {
 
-    var bare = key.replace(
-        /^[^a-zA-Z]*(?:Ms|O|Webkit|Moz|Khtml|ms-|o-|webkit-|moz-|khtml-)?|[^a-zA-Z]+$/g,
+    var base = dashify(key).replace(
+        /^[^a-zA-Z]*(?:ms-|o-|webkit-|moz-|khtml-)?|[^a-zA-Z]+$/g,
       '')
 
-    var base = bare.charAt(0).toLowerCase() + bare.substr(1)
-
-    // here ignored value===''||value===null,
+    // here **ignored** value===''||value===null,
     // which is false for isNaN.
     // cssobj never have this value
     return (isNaN(value)
             || unitless.indexOf(base)>-1
-            || unitlessDash.indexOf(base)>-1
            )
       ? value
       : value + unit

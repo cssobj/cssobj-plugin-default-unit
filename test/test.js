@@ -50,16 +50,14 @@ describe('default value test', function() {
 
   it('should allow vendor prefix like -ms-,-o-', function() {
 
+    // wrong property will add unit!
     var ret = addUnit()(.5, 'Oopacity')
-    expect(ret).equal(.5)
+    expect(ret).equal('0.5px')
 
     var ret = addUnit()(.5, 'OOpacity')
     expect(ret).equal(.5)
 
     var ret = addUnit()(.5, 'MsOpacity')
-    expect(ret).equal(.5)
-
-    var ret = addUnit()(.5, 'Msopacity')
     expect(ret).equal(.5)
 
     var ret = addUnit()(999, 'MsZIndex')
