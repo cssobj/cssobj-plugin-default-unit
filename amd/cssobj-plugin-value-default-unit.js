@@ -3,34 +3,40 @@ define('cssobj_plugin_value_default_unit', function () { 'use strict';
   // cssobj value plugin
 
   var unitless = [
-    'animationiterationcount',
-    'boxflex',
-    'boxflexgroup',
-    'boxordinalgroup',
+    'animationIterationCount',
+    'boxFlex',
+    'boxFlexGroup',
+    'boxOrdinalGroup',
     'columns',
-    'columncount',
-    'fillopacity',
+    'columnCount',
+    'fillOpacity',
     'flex',
-    'flexgrow',
-    'flexpositive',
-    'flexnegative',
-    'flexorder',
-    'flexshrink',
-    'fontweight',
-    'lineheight',
-    'lineclamp',
+    'flexGrow',
+    'flexPositive',
+    'flexNegative',
+    'flexOrder',
+    'flexShrink',
+    'fontWeight',
+    'lineHeight',
+    'lineClamp',
     'opacity',
     'order',
     'orphans',
-    'stopopacity',
-    'strokedashoffset',
-    'strokeopacity',
-    'strokewidth',
-    'tabsize',
+    'stopOpacity',
+    'strokeDashOffset',
+    'strokeOpacity',
+    'strokeWidth',
+    'tabSize',
     'widows',
-    'zindex',
+    'zIndex',
     'zoom'
   ]
+
+  var unitlessDash = unitless.map(function(v) {
+    return v.replace(/[A-Z]/g, function(m) {
+      return '-' + m.toLowerCase()
+    })
+  })
 
   function cssobj_plugin_value_default_unit (unit) {
 
@@ -38,13 +44,21 @@ define('cssobj_plugin_value_default_unit', function () { 'use strict';
 
     return function(value, key, node, result) {
 
-      var base = key
-        .replace(/^[^a-zA-Z]*(?:Ms|O|Webkit|Moz|Khtml)?|[^a-zA-Z]+$/g, '')
-        .toLowerCase()
+      var bare = key.replace(
+          /^[^a-zA-Z]*(?:Ms|O|Webkit|Moz|Khtml|ms-|o-|webkit-|moz-|khtml-)?|[^a-zA-Z]+$/g,
+        '')
 
-      if (unitless.indexOf(base)>-1 || isNaN(value)) return value
+      var base = bare.charAt(0).toLowerCase() + bare.substr(1)
 
-      return value + unit
+      // here ignored value===''||value===null,
+      // which is false for isNaN.
+      // cssobj never have this value
+      return (isNaN(value)
+              || unitless.indexOf(base)>-1
+              || unitlessDash.indexOf(base)>-1
+             )
+        ? value
+        : value + unit
 
     }
 

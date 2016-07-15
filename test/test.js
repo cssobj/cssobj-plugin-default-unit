@@ -26,6 +26,9 @@ describe('default value test', function() {
     var ret = addUnit('em')(23, 'height')
     expect(ret).equal('23em')
 
+    var ret = addUnit('em')(23, 'marginBottom')
+    expect(ret).equal('23em')
+
   })
 
 
@@ -35,6 +38,12 @@ describe('default value test', function() {
     expect(ret).equal(.5)
 
     var ret = addUnit()(999, 'zIndex')
+    expect(ret).equal(999)
+
+    var ret = addUnit()(999, 'lineHeight')
+    expect(ret).equal(999)
+
+    var ret = addUnit()(999, 'line-height')
     expect(ret).equal(999)
 
   })
@@ -56,6 +65,12 @@ describe('default value test', function() {
     var ret = addUnit()(999, 'MsZIndex')
     expect(ret).equal(999)
 
+    var ret = addUnit()(999, '-ms-line-height')
+    expect(ret).equal(999)
+
+    var ret = addUnit()(999, '-webkit-opacity')
+    expect(ret).equal(999)
+
   })
 
   it('should allow css hacks',function() {
@@ -73,6 +88,12 @@ describe('default value test', function() {
     expect(ret).equal(.5)
 
     var ret = addUnit()(999, '__zIndex\\0/')
+    expect(ret).equal(999)
+
+    var ret = addUnit()(999, '__zindex\\0/')
+    expect(ret).equal('999px')
+
+    var ret = addUnit()(999, '_-ms-z-index\\0/')
     expect(ret).equal(999)
 
   })
