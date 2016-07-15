@@ -39,8 +39,7 @@ function cssobj_plugin_value_default_unit (unit) {
   return function(value, key, node, result) {
 
     var base = key
-      .replace(/^[^a-zA-Z]*(?:Ms|O|Webkit|Moz|Khtml)?/, '')
-      .replace(/[^a-zA-Z]+$/,'')
+      .replace(/^[^a-zA-Z]*(?:Ms|O|Webkit|Moz|Khtml)?|[^a-zA-Z]+$/g, '')
       .toLowerCase()
 
     if (unitless.indexOf(base)>-1 || isNaN(value)) return value
