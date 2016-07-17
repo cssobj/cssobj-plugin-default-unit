@@ -1,6 +1,13 @@
 define('cssobj_plugin_value_default_unit', function () { 'use strict';
 
-  // cssobj value plugin
+  // helper functions for cssobj
+
+  // convert js prop into css prop (dashified)
+  function dashify(str) {
+    return str.replace(/[A-Z]/g, function(m) {
+      return '-' + m.toLowerCase()
+    })
+  }
 
   var unitless = [
     "animation-iteration-count",
@@ -32,11 +39,6 @@ define('cssobj_plugin_value_default_unit', function () { 'use strict';
     "zoom"
   ]
 
-  function dashify(str) {
-    return str.replace(/[A-Z]/g, function(m) {
-      return '-' + m.toLowerCase()
-    })
-  }
 
   function cssobj_plugin_value_default_unit (unit) {
 

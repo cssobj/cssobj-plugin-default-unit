@@ -1,5 +1,7 @@
 // cssobj value plugin
 
+import {dashify} from '../node_modules/cssobj-helper/dist/cssobj-helper.es.js'
+
 var unitless = [
   "animation-iteration-count",
   "box-flex",
@@ -30,11 +32,6 @@ var unitless = [
   "zoom"
 ]
 
-function dashify(str) {
-  return str.replace(/[A-Z]/g, function(m) {
-    return '-' + m.toLowerCase()
-  })
-}
 
 export default function cssobj_plugin_value_default_unit (unit) {
 
