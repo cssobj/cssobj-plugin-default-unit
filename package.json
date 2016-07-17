@@ -1,18 +1,16 @@
 {
   "name": "cssobj-plugin-value-default-unit",
   "version": "1.0.0",
-  "description": "",
-  "main": "cjs/cssobj-plugin-value-default-unit.js",
+  "description": "Add default unit to cssobj numeric values",
+  "main": "dist/cssobj-plugin-value-default-unit.cjs.js",
+  "jsnext:main": "dist/cssobj-plugin-value-default-unit.es.js",
   "scripts": {
-    "iife": "mkdir -p iife && rollup -f iife -n cssobj_plugin_value_default_unit src/cssobj-plugin-value-default-unit.js -o iife/cssobj-plugin-value-default-unit.js && uglifyjs iife/cssobj-plugin-value-default-unit.js -cm -o iife/cssobj-plugin-value-default-unit.min.js",
-    "amd": "mkdir -p amd && rollup -f amd -u cssobj_plugin_value_default_unit src/cssobj-plugin-value-default-unit.js -o amd/cssobj-plugin-value-default-unit.js",
-    "cjs": "mkdir -p cjs && rollup -f cjs src/cssobj-plugin-value-default-unit.js -o cjs/cssobj-plugin-value-default-unit.js",
-    "es": "mkdir -p es && rollup -f es src/cssobj-plugin-value-default-unit.js -o es/cssobj-plugin-value-default-unit.js",
-    "make": "npm run iife && npm run cjs && npm run amd && npm run es",
-    "test": "mocha"
+    "test": "mocha",
+    "report": "cd dist && gzip < cssobj-plugin-value-default-unit.min.js > cssobj-plugin-value-default-unit.min.gz && ls -lh && rm -f *.gz",
+    "make": "rollup -c && uglifyjs dist/cssobj-plugin-value-default-unit.iife.js -cm -o dist/cssobj-plugin-value-default-unit.min.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "James Yang <jamesyang999@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.5.3"

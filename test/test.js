@@ -1,5 +1,5 @@
 var expect = require('chai').expect
-var addUnit = require('../cjs/cssobj-plugin-value-default-unit.js')
+var addUnit = require('../dist/cssobj-plugin-value-default-unit.cjs.js')
 
 describe('default value test', function() {
 
