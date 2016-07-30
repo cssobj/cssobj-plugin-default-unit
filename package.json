@@ -9,6 +9,14 @@
     "report": "cd dist && gzip < cssobj-plugin-value-default-unit.min.js > cssobj-plugin-value-default-unit.min.gz && ls -lh && rm -f *.gz",
     "make": "rollup -c && uglifyjs dist/cssobj-plugin-value-default-unit.iife.js -cm -o dist/cssobj-plugin-value-default-unit.min.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cssobj/cssobj-plugin-value-default-unit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cssobj/cssobj-plugin-value-default-unit/issues"
+  },
+  "homepage": "https://github.com/cssobj/cssobj-plugin-value-default-unit#readme",
   "author": "James Yang <jamesyang999@gmail.com>",
   "license": "MIT",
   "devDependencies": {
