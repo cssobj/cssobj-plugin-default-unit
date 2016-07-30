@@ -1,5 +1,7 @@
 # cssobj-plugin-value-default-unit
 
+[![Build Status](https://travis-ci.org/cssobj/cssobj-plugin-value-default-unit.svg?branch=master)](https://travis-ci.org/cssobj/cssobj-plugin-value-default-unit)
+
 Add default unit to css numeric-like values, which have to specify an unit.
 
 ## Install
