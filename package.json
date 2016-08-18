@@ -1,22 +1,22 @@
 {
-  "name": "cssobj-plugin-value-default-unit",
-  "version": "1.0.0",
-  "description": "Add default unit to cssobj numeric values",
-  "main": "dist/cssobj-plugin-value-default-unit.cjs.js",
-  "jsnext:main": "dist/cssobj-plugin-value-default-unit.es.js",
+  "name": "cssobj-plugin-default-unit",
+  "version": "2.0.0",
+  "description": "Add default unit to cssobj numeric ",
+  "main": "dist/cssobj-plugin-default-unit.cjs.js",
+  "jsnext:main": "dist/cssobj-plugin-default-unit.es.js",
   "scripts": {
     "test": "mocha",
-    "report": "cd dist && gzip < cssobj-plugin-value-default-unit.min.js > cssobj-plugin-value-default-unit.min.gz && ls -lh && rm -f *.gz",
-    "make": "rollup -c && uglifyjs dist/cssobj-plugin-value-default-unit.iife.js -cm -o dist/cssobj-plugin-value-default-unit.min.js"
+    "report": "cd dist && gzip < cssobj-plugin-default-unit.min.js > cssobj-plugin-default-unit.min.gz && ls -lh && rm -f *.gz",
+    "make": "rollup -c && uglifyjs dist/cssobj-plugin-default-unit.iife.js -cm -o dist/cssobj-plugin-default-unit.min.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cssobj/cssobj-plugin-value-default-unit.git"
+    "url": "git+https://github.com/cssobj/cssobj-plugin-default-unit.git"
   },
   "bugs": {
-    "url": "https://github.com/cssobj/cssobj-plugin-value-default-unit/issues"
+    "url": "https://github.com/cssobj/cssobj-plugin-default-unit/issues"
   },
-  "homepage": "https://github.com/cssobj/cssobj-plugin-value-default-unit#readme",
+  "homepage": "https://github.com/cssobj/cssobj-plugin-default-unit#readme",
   "author": "James Yang <jamesyang999@gmail.com>",
   "license": "MIT",
   "devDependencies": {

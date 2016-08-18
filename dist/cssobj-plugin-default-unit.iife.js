@@ -1,4 +1,5 @@
-define('cssobj_plugin_value_default_unit', function () { 'use strict';
+var cssobj_plugin_default_unit = (function () {
+  'use strict';
 
   // convert js prop into css prop (dashified)
   function dashify(str) {
@@ -42,25 +43,27 @@ define('cssobj_plugin_value_default_unit', function () { 'use strict';
 
     unit = unit || 'px'
 
-    return function(value, key, node, result) {
+    return {
+      value: function(value, key, node, result) {
 
-      var base = dashify(key).replace(
-          /^[^a-zA-Z]*(?:ms-|o-|webkit-|moz-|khtml-)?|[^a-zA-Z]+$/g,
-        '')
+        var base = dashify(key).replace(
+            /^[^a-zA-Z]*(?:ms-|o-|webkit-|moz-|khtml-)?|[^a-zA-Z]+$/g,
+          '')
 
-      // here **ignored** value===''||value===null,
-      // which is false for isNaN.
-      // cssobj never have this value
-      return (isNaN(value)
-              || unitless.indexOf(base)>-1
-             )
-        ? value
-        : value + unit
+        // here **ignored** value===''||value===null,
+        // which is false for isNaN.
+        // cssobj never have this value
+        return (isNaN(value)
+                || unitless.indexOf(base)>-1
+               )
+          ? value
+          : value + unit
 
+      }
     }
 
   }
 
   return cssobj_plugin_value_default_unit;
 
-});
+}());
