@@ -14,8 +14,8 @@ npm install cssobj/cssobj-plugin-default-unit
 
 ``` javascript
 var cssobj_core = require('cssobj-core')
-var pluginUnit = require('cssobj-plugin-default-unit')
-var cssobj = cssobj_core({plugins: [ pluginUnit('px') ]})
+var defaultUnit = require('cssobj-plugin-default-unit')
+var cssobj = cssobj_core({plugins: [ defaultUnit('px') ]})
 
 var obj = { p: { fontSize: 12 } }
 var result = cssobj(obj)
@@ -25,7 +25,7 @@ var result = cssobj(obj)
 
 ## API
 
-### `var plugin = pluginUnit(unit)`
+### `var plugin = defaultUnit(unit)`
 
 Get plugin function to apply, pass unit.
 
@@ -46,9 +46,9 @@ A function can be as cssobj plugin.
 ## Example
 
 ``` javascript
-pluginUnit()  // default unit is 'px'
+defaultUnit()  // default unit is 'px'
 
-pluginUnit('em')  // default unit is 'em'
+defaultUnit('em')  // default unit is 'em'
 ```
 
 
