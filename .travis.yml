@@ -4,6 +4,5 @@ node_js:
   - '6'
 
 script:
-  - git clone https://github.com/cssobj/cssobj-plugin-default-unit ../cssobj-plugin-default-unit
   - npm install -g rollup
   - npm test
