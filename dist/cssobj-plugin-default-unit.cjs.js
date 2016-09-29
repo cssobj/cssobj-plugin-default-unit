@@ -1,5 +1,12 @@
 'use strict';
 
+// helper functions for cssobj
+
+// check n is numeric, or string of numeric
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n)
+}
+
 // convert js prop into css prop (dashified)
 function dashify(str) {
   return str.replace(/[A-Z]/g, function(m) {
@@ -38,7 +45,7 @@ var unitless = [
 ]
 
 
-function cssobj_plugin_value_default_unit (unit) {
+function cssobj_plugin_default_unit (unit) {
 
   unit = unit || 'px'
 
@@ -52,7 +59,7 @@ function cssobj_plugin_value_default_unit (unit) {
       // here **ignored** value===''||value===null,
       // which is false for isNaN.
       // cssobj never have this value
-      return (isNaN(value)
+      return (!isNumeric(value)
               || unitless.indexOf(base)>-1
              )
         ? value
@@ -63,4 +70,4 @@ function cssobj_plugin_value_default_unit (unit) {
 
 }
 
-module.exports = cssobj_plugin_value_default_unit;
+module.exports = cssobj_plugin_default_unit;

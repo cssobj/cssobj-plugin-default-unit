@@ -97,4 +97,15 @@ describe('default value test', function() {
 
   })
 
+  it('corner case for emtpy "",[],{},NaN,null,undefined', function() {
+    expect(addUnit('', 'opacity')).equal('')
+    expect(addUnit('', 'width')).equal('')
+    expect(addUnit([], 'width')).deep.equal([])
+    expect(addUnit({}, 'width')).deep.equal({})
+    expect(addUnit(null, 'width')).equal(null)
+    expect(isNaN(addUnit(NaN, 'width'))).equal(true)
+    expect(addUnit(undefined, 'width')).equal(undefined)
+
+  })
+
 })

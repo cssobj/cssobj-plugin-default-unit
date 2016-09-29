@@ -1,13 +1,15 @@
 {
   "name": "cssobj-plugin-default-unit",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Add default unit to cssobj numeric ",
   "main": "dist/cssobj-plugin-default-unit.cjs.js",
   "jsnext:main": "dist/cssobj-plugin-default-unit.es.js",
   "scripts": {
+    "pretest": "rollup -c",
     "test": "mocha",
     "report": "cd dist && gzip < cssobj-plugin-default-unit.min.js > cssobj-plugin-default-unit.min.gz && ls -lh && rm -f *.gz",
-    "make": "rollup -c && uglifyjs dist/cssobj-plugin-default-unit.iife.js -cm -o dist/cssobj-plugin-default-unit.min.js"
+    "build": "rollup -c && uglifyjs dist/cssobj-plugin-default-unit.iife.js -cm -o dist/cssobj-plugin-default-unit.min.js",
+    "make": "npm run build && gulp bump"
   },
   "repository": {
     "type": "git",
