@@ -5,7 +5,7 @@
   "main": "dist/cssobj-plugin-default-unit.cjs.js",
   "jsnext:main": "dist/cssobj-plugin-default-unit.es.js",
   "scripts": {
-    "pretest": "rollup -c",
+    "pretest": "npm run build",
     "test": "mocha",
     "report": "cd dist && gzip < cssobj-plugin-default-unit.min.js > cssobj-plugin-default-unit.min.gz && ls -lh && rm -f *.gz",
     "build": "rollup -c && uglifyjs dist/cssobj-plugin-default-unit.iife.js -cm -o dist/cssobj-plugin-default-unit.min.js",
