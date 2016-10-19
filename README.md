@@ -1,6 +1,6 @@
 # cssobj-plugin-default-unit
 
-[![Build Status](https://travis-ci.org/cssobj/cssobj-plugin-default-unit.svg?branch=master)](https://travis-ci.org/cssobj/cssobj-plugin-default-unit)
+[![Join the chat at https://gitter.im/css-in-js/cssobj](https://badges.gitter.im/css-in-js/cssobj.svg)](https://gitter.im/css-in-js/cssobj) [![Build Status](https://travis-ci.org/cssobj/cssobj-plugin-default-unit.svg?branch=master)](https://travis-ci.org/cssobj/cssobj-plugin-default-unit)
 
 Add default unit to css numeric-like values, which have to specify an unit.
 
