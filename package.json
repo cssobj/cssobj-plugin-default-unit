@@ -1,6 +1,6 @@
 {
   "name": "cssobj-plugin-default-unit",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Add default unit to cssobj numeric ",
   "main": "dist/cssobj-plugin-default-unit.cjs.js",
   "jsnext:main": "dist/cssobj-plugin-default-unit.es.js",

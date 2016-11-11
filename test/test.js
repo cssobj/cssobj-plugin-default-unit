@@ -9,6 +9,12 @@ describe('default value test', function() {
     var ret = addUnit(23, 'width')
     expect(ret).equal('23px')
 
+    var ret = addUnit('23', 'width')
+    expect(ret).equal('23')
+
+    var ret = addUnit(0, 'width')
+    expect(ret).equal(0)
+
     var ret = addUnit(23, 'height')
     expect(ret).equal('23px')
 

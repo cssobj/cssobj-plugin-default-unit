@@ -1,6 +1,6 @@
 // cssobj value plugin
 
-import {dashify, isNumeric} from '../../cssobj-helper/lib/cssobj-helper.js'
+import {dashify} from '../../cssobj-helper/lib/cssobj-helper.js'
 
 var unitless = [
   "animation-iteration-count",
@@ -47,7 +47,7 @@ export default function cssobj_plugin_default_unit (unit) {
       // here **ignored** value===''||value===null,
       // which is false for isNaN.
       // cssobj never have this value
-      return (!isNumeric(value)
+      return (!value || typeof value !== 'number'
               || unitless.indexOf(base)>-1
              )
         ? value
