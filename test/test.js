@@ -47,11 +47,11 @@ describe('default value test', function() {
     var ret = addUnit(999, 'zIndex')
     expect(ret).equal(999)
 
-    var ret = addUnit(999, 'lineHeight')
-    expect(ret).equal(999)
+    var ret = addUnit(999.9, 'lineHeight')
+    expect(ret).equal('999.9px')
 
-    var ret = addUnit(999, 'line-height')
-    expect(ret).equal(999)
+    var ret = addUnit('1.5', 'line-height')
+    expect(ret).equal('1.5')
 
   })
 
@@ -70,7 +70,7 @@ describe('default value test', function() {
     var ret = addUnit(999, 'MsZIndex')
     expect(ret).equal(999)
 
-    var ret = addUnit(999, '-ms-line-height')
+    var ret = addUnit(999, '-ms-flex')
     expect(ret).equal(999)
 
     var ret = addUnit(999, '-webkit-opacity')

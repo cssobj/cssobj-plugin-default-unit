@@ -51,5 +51,12 @@ defaultUnit()  // default unit is 'px'
 defaultUnit('em')  // default unit is 'em'
 ```
 
+## Caveat
 
+`line-height` will add unit if it's `number`, to disable it, using `string` as value.
+
+``` javascript
+p { lineHeight: '1.5' }  // will not add unit
+p { lineHeight: 1.5 }  // will result: '1.5px'
+```
 

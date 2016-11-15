@@ -26,15 +26,12 @@ function dashify(str) {
 // repeat str for num times
 
 
-// don't use String.prototype.trim in cssobj, using below instead
-
-
 // random string, should used across all cssobj plugins
 var random = (function () {
   var count = 0;
-  return function () {
+  return function (prefix) {
     count++;
-    return '_' + Math.floor(Math.random() * Math.pow(2, 32)).toString(36) + count + '_'
+    return '_' + (prefix||'') + Math.floor(Math.random() * Math.pow(2, 32)).toString(36) + count + '_'
   }
 })();
 
@@ -76,7 +73,7 @@ var unitless = [
   "flex-order",
   "flex-shrink",
   "font-weight",
-  "line-height",
+  // "line-height",  /* alway add unit unless it's not number */
   "line-clamp",
   "opacity",
   "order",
