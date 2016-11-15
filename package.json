@@ -4,6 +4,7 @@
   "description": "Add default unit to cssobj numeric ",
   "main": "dist/cssobj-plugin-default-unit.cjs.js",
   "jsnext:main": "dist/cssobj-plugin-default-unit.es.js",
+  "files": ["*.json", "*.ts", "dist"],
   "scripts": {
     "pretest": "npm run build",
     "test": "mocha",
