@@ -17,7 +17,7 @@ var unitless = [
   "flex-order",
   "flex-shrink",
   "font-weight",
-  // "line-height",  /* alway add unit unless it's not number */
+  "line-height",  /* 1.5 or 22px? so don't add unit here */
   "line-clamp",
   "opacity",
   "order",

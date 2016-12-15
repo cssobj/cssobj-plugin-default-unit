@@ -53,10 +53,12 @@ defaultUnit('em')  // default unit is 'em'
 
 ## Caveat
 
-`line-height` will add unit if it's `number`, to disable it, using `string` as value.
+`line-height` will **NOT** add unit, since below:
 
 ``` javascript
-p { lineHeight: '1.5' }  // will not add unit
-p { lineHeight: 1.5 }  // will result: '1.5px'
+p { lineHeight: 1.5 }
+p { lineHeight: '22px' }
 ```
+
+It's both valid with or w/o unit, so this plugin don't touch it.
 

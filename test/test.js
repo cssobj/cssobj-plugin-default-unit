@@ -47,11 +47,17 @@ describe('default value test', function() {
     var ret = addUnit(999, 'zIndex')
     expect(ret).equal(999)
 
+    // line-height don't add unit
     var ret = addUnit(999.9, 'lineHeight')
-    expect(ret).equal('999.9px')
+    expect(ret).equal(999.9)
 
+    // line-height don't add unit
     var ret = addUnit('1.5', 'line-height')
     expect(ret).equal('1.5')
+
+    // line-height don't add unit
+    var ret = addUnit(1.5, 'line-height')
+    expect(ret).equal(1.5)
 
   })
 
