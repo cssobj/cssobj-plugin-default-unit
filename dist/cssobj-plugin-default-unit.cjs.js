@@ -3,7 +3,9 @@
 // helper functions for cssobj
 
 // check n is numeric, or string of numeric
-
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n)
+}
 
 function own(o, k) {
   return {}.hasOwnProperty.call(o, k)
@@ -102,7 +104,7 @@ function cssobj_plugin_default_unit (unit) {
       // here **ignored** value===''||value===null,
       // which is false for isNaN.
       // cssobj never have this value
-      return (!value || typeof value !== 'number'
+      return (!isNumeric(value)
               || unitless.indexOf(base)>-1
              )
         ? value

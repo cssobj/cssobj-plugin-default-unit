@@ -10,10 +10,11 @@ describe('default value test', function() {
     expect(ret).equal('23px')
 
     var ret = addUnit('23', 'width')
-    expect(ret).equal('23')
+    expect(ret).equal('23px')
 
+    // zero should also add unit?
     var ret = addUnit(0, 'width')
-    expect(ret).equal(0)
+    expect(ret).equal('0px')
 
     var ret = addUnit(23, 'height')
     expect(ret).equal('23px')
