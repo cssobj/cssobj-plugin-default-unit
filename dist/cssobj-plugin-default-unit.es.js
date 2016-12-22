@@ -26,13 +26,7 @@ function dashify(str) {
 
 
 // random string, should used across all cssobj plugins
-var random = (function () {
-  var count = 0;
-  return function (prefix) {
-    count++;
-    return '_' + (prefix||'') + Math.floor(Math.random() * Math.pow(2, 32)).toString(36) + count + '_'
-  }
-})();
+
 
 // extend obj from source, if it's no key in obj, create one
 
@@ -50,7 +44,13 @@ function arrayKV (obj, k, v, reverse, unique) {
 // get parents array from node (when it's passed the test)
 
 
-// split selector etc. aware of css attributes
+// split selector with comma, aware of css attributes
+
+
+// split selector with splitter, aware of css attributes
+
+
+// split char aware of syntax
 
 
 // checking for valid css value

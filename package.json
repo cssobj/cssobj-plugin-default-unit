@@ -1,8 +1,9 @@
 {
   "name": "cssobj-plugin-default-unit",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Add default unit to cssobj numeric ",
   "main": "dist/cssobj-plugin-default-unit.cjs.js",
+  "browser": "dist/cssobj-plugin-default-unit.iife.js",
   "jsnext:main": "dist/cssobj-plugin-default-unit.es.js",
   "files": ["*.json", "*.ts", "dist"],
   "scripts": {
@@ -26,7 +27,5 @@
     "chai": "^3.5.0",
     "mocha": "^2.5.3"
   },
-  "dependencies": {
-    "cssobj-helper": "github:cssobj/cssobj-helper"
-  }
+  "dependencies": {}
 }
