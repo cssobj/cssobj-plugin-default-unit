@@ -8,9 +8,7 @@ function isNumeric(n) {
   return !isNaN(parseFloat(n)) && isFinite(n)
 }
 
-function own(o, k) {
-  return {}.hasOwnProperty.call(o, k)
-}
+
 
 // set default option (not deeply)
 
@@ -35,11 +33,7 @@ function dashify(str) {
 
 
 // ensure obj[k] as array, then push v into it
-function arrayKV (obj, k, v, reverse, unique) {
-  obj[k] = k in obj ? [].concat(obj[k]) : [];
-  if(unique && obj[k].indexOf(v)>-1) return
-  reverse ? obj[k].unshift(v) : obj[k].push(v);
-}
+
 
 // replace find in str, with rep function result
 

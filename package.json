@@ -1,10 +1,10 @@
 {
   "name": "cssobj-plugin-default-unit",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "description": "Add default unit to cssobj numeric ",
   "main": "dist/cssobj-plugin-default-unit.cjs.js",
-  "browser": "dist/cssobj-plugin-default-unit.iife.js",
-  "jsnext:main": "dist/cssobj-plugin-default-unit.es.js",
+  "module": "dist/cssobj-plugin-default-unit.es.js",
+  "browser": "dist/cssobj-plugin-default-unit.umd.js",
   "files": ["*.json", "*.ts", "dist"],
   "scripts": {
     "pretest": "npm run build",
